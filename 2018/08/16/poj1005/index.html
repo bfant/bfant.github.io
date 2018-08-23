@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="A way to solve problem 1005 of poj.orgTitle: I Think I Need a HouseboatDescription​    Fred Mapper is considering purchasing some land in Louisiana to build his house on. In the process of investigati">
+<meta name="description" content="A way to solve problem 1005 of poj.orgTitle: I Think I Need a HouseboatDescriptionFred Mapper is considering purchasing some land in Louisiana to build his house on. In the process of investigating th">
 <meta name="keywords" content="poj,c++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="poj1005">
 <meta property="og:url" content="http://yoursite.com/2018/08/16/poj1005/index.html">
 <meta property="og:site_name" content="Hi">
-<meta property="og:description" content="A way to solve problem 1005 of poj.orgTitle: I Think I Need a HouseboatDescription​    Fred Mapper is considering purchasing some land in Louisiana to build his house on. In the process of investigati">
+<meta property="og:description" content="A way to solve problem 1005 of poj.orgTitle: I Think I Need a HouseboatDescriptionFred Mapper is considering purchasing some land in Louisiana to build his house on. In the process of investigating th">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://pdlnqwl39.bkt.clouddn.com/semicicle.jpg">
-<meta property="og:updated_time" content="2018-08-17T09:51:55.638Z">
+<meta property="og:updated_time" content="2018-08-23T09:40:49.501Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="poj1005">
-<meta name="twitter:description" content="A way to solve problem 1005 of poj.orgTitle: I Think I Need a HouseboatDescription​    Fred Mapper is considering purchasing some land in Louisiana to build his house on. In the process of investigati">
+<meta name="twitter:description" content="A way to solve problem 1005 of poj.orgTitle: I Think I Need a HouseboatDescriptionFred Mapper is considering purchasing some land in Louisiana to build his house on. In the process of investigating th">
 <meta name="twitter:image" content="http://pdlnqwl39.bkt.clouddn.com/semicicle.jpg">
 
 
@@ -295,6 +295,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -322,12 +344,12 @@
       
 
       
-        <h1 id="A-way-to-solve-problem-1005-of-poj-org"><a href="#A-way-to-solve-problem-1005-of-poj-org" class="headerlink" title="A way to solve problem 1005 of poj.org"></a>A way to solve problem 1005 of poj.org</h1><h2 id="Title-I-Think-I-Need-a-Houseboat"><a href="#Title-I-Think-I-Need-a-Houseboat" class="headerlink" title="Title: I Think I Need a Houseboat"></a>Title: I Think I Need a Houseboat</h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>​    Fred Mapper is considering purchasing some land in Louisiana to build his house on. In the process of investigating the land, he learned that the state of Louisiana is actually shrinking by 50 square miles each year, due to erosion caused by the Mississippi River. Since Fred is hoping to live in this house the rest of his life, he needs to know if his land is going to be lost to erosion.   After doing more research, Fred has learned that the land that is being lost forms a semicircle. This semicircle is part of a circle centered at (0,0), with the line that bisects the circle being the X axis. Locations below the X axis are in the water. The semicircle has an area of 0 at the beginning of year 1. (Semicircle illustrated in the Figure.)  </p>
-<p><img src="http://pdlnqwl39.bkt.clouddn.com/semicicle.jpg"></p>
+        <h1 id="A-way-to-solve-problem-1005-of-poj-org"><a href="#A-way-to-solve-problem-1005-of-poj-org" class="headerlink" title="A way to solve problem 1005 of poj.org"></a>A way to solve problem 1005 of poj.org</h1><h2 id="Title-I-Think-I-Need-a-Houseboat"><a href="#Title-I-Think-I-Need-a-Houseboat" class="headerlink" title="Title: I Think I Need a Houseboat"></a>Title: I Think I Need a Houseboat</h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><pre><code>Fred Mapper is considering purchasing some land in Louisiana to build his house on. In the process of investigating the land, he learned that the state of Louisiana is actually shrinking by 50 square miles each year, due to erosion caused by the Mississippi River. Since Fred is hoping to live in this house the rest of his life, he needs to know if his land is going to be lost to erosion.   After doing more research, Fred has learned that the land that is being lost forms a semicircle. This semicircle is part of a circle centered at (0,0), with the line that bisects the circle being the X axis. Locations below the X axis are in the water. The semicircle has an area of 0 at the beginning of year 1. (Semicircle illustrated in the Figure.)  
+</code></pre><p><img src="http://pdlnqwl39.bkt.clouddn.com/semicicle.jpg"></p>
 <a id="more"></a>
-<h4 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h4><p>​    The first line of input will be a positive integer indicating how many data sets will be included (N). Each of the next N lines will contain the X and Y Cartesian coordinates of the land Fred is considering. These will be floating point numbers measured in miles. The Y coordinate will be non-negative. (0,0) will not be given. </p>
-<h4 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h4><p>​    For each data set, a single line of output should appear. This line should take the form of: “Property N: This property will begin eroding in year Z.” Where N is the data set (counting from 1), and Z is the first year (start from 1) this property will be within the semicircle AT THE END OF YEAR Z. Z must be an integer. After the last data set, this should print out “END OF OUTPUT.” </p>
-<h4 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h4><p>2<br>1.0 1.0<br>25.0 0.0</p>
+<h4 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h4><pre><code>The first line of input will be a positive integer indicating how many data sets will be included (N). Each of the next N lines will contain the X and Y Cartesian coordinates of the land Fred is considering. These will be floating point numbers measured in miles. The Y coordinate will be non-negative. (0,0) will not be given. 
+</code></pre><h4 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h4><pre><code>For each data set, a single line of output should appear. This line should take the form of: “Property N: This property will begin eroding in year Z.” Where N is the data set (counting from 1), and Z is the first year (start from 1) this property will be within the semicircle AT THE END OF YEAR Z. Z must be an integer. After the last data set, this should print out “END OF OUTPUT.” 
+</code></pre><h4 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h4><p>2<br>1.0 1.0<br>25.0 0.0</p>
 <h4 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h4><p>Property 1: This property will begin eroding in year 1.<br>Property 2: This property will begin eroding in year 20.<br>END OF OUTPUT.</p>
 <h4 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h4><ol>
 <li>No property will appear exactly on the semicircle boundary: it will either be inside or outside.  </li>
@@ -377,6 +399,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/23/WPF控件布局/" rel="prev" title="WPF控件布局">
+                WPF控件布局 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -453,12 +479,21 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
             
 
             
@@ -466,7 +501,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
