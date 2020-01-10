@@ -396,7 +396,8 @@
       
         
           
-            <h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><h2 id="2-1-插入排序"><a href="#2-1-插入排序" class="headerlink" title="2.1 插入排序"></a>2.1 插入排序</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">insertion_sort</span>(<span class="title">T</span> <span class="title">a</span>[], <span class="title">int</span> <span class="title">n</span>) //<span class="title">n</span>=<span class="title">a</span>.<span class="title">length</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        T key = a[j];</span><br><span class="line">        <span class="keyword">int</span> i = j - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; a[i] &gt; key)</span><br><span class="line">        &#123;</span><br><span class="line">            a[i + <span class="number">1</span>] = a[i];</span><br><span class="line">            i = i - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        a[i + <span class="number">1</span>] = key;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <a id="more"></a>
+<h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><h2 id="2-1-插入排序"><a href="#2-1-插入排序" class="headerlink" title="2.1 插入排序"></a>2.1 插入排序</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">insertion_sort</span>(<span class="title">T</span> <span class="title">a</span>[], <span class="title">int</span> <span class="title">n</span>) //<span class="title">n</span>=<span class="title">a</span>.<span class="title">length</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        T key = a[j];</span><br><span class="line">        <span class="keyword">int</span> i = j - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; a[i] &gt; key)</span><br><span class="line">        &#123;</span><br><span class="line">            a[i + <span class="number">1</span>] = a[i];</span><br><span class="line">            i = i - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        a[i + <span class="number">1</span>] = key;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="2-1-1"><a href="#2-1-1" class="headerlink" title="2.1-1"></a>2.1-1</h3><p> 略</p>
 <h3 id="2-1-2"><a href="#2-1-2" class="headerlink" title="2.1-2"></a>2.1-2</h3><p>将第8行的&gt;替换为&lt;即可</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">insertion_sort</span>(<span class="title">T</span> <span class="title">a</span>[], <span class="title">int</span> <span class="title">n</span>) //<span class="title">n</span>=<span class="title">a</span>.<span class="title">length</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        T key = a[j];</span><br><span class="line">        <span class="keyword">int</span> i = j - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; a[i] &lt; key)</span><br><span class="line">        &#123;</span><br><span class="line">            a[i + <span class="number">1</span>] = a[i];</span><br><span class="line">            i = i - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        a[i + <span class="number">1</span>] = key;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -643,14 +644,153 @@ y=\sum_{k=0}^{n-(i+1)}a_{k+i+1}x^k=\sum_{k=0}^na_kx^k</script><h4 id="d-2"><a hr
 
       
         
-          <h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/09/算法导论第一章/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <a id="more"></a>
+<h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h2 id="1-1"><a href="#1-1" class="headerlink" title="1.1"></a>1.1</h2><p>略</p>
+<h2 id="1-2"><a href="#1-2" class="headerlink" title="1.2"></a>1.2</h2><h3 id="1-2-1"><a href="#1-2-1" class="headerlink" title="1.2-1"></a>1.2-1</h3><p>略</p>
+<h3 id="1-2-2"><a href="#1-2-2" class="headerlink" title="1.2-2"></a>1.2-2</h3><p>$8n^2=64nlgn$    (n为大于1的正整数)</p>
+<script type="math/tex; mode=display">
+8n^2-64nlgn=\begin{cases}
+<0 ,  2\leq n\leq43\\
+>0 ,  44\leq n\\
+\end{cases}</script><p>对于[2,43]的n值，插入排序优于归并排序</p>
+<h3 id="1-2-3"><a href="#1-2-3" class="headerlink" title="1.2-3"></a>1.2-3</h3><p>n最小值为15时，运行时间为$100n^2$的一个算法在相同机器上快于运行时间为$2^n$的另一个算法</p>
+<h2 id="章末思考题"><a href="#章末思考题" class="headerlink" title="章末思考题"></a>章末思考题</h2><h3 id="1-1-1"><a href="#1-1-1" class="headerlink" title="1-1"></a>1-1</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">1秒钟</th>
+<th style="text-align:center">1分钟</th>
+<th style="text-align:center">1小时</th>
+<th style="text-align:center">1天</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$lgn$</td>
+<td style="text-align:center">$2^{1\times10^{3} }$</td>
+<td style="text-align:center">$2^{6\times{ {10}^4} }$</td>
+<td style="text-align:center">$2^{3.6\times{ {10}^6} }$</td>
+<td style="text-align:center">$2^{8.64\times{ {10}^7} }$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\sqrt{n}$</td>
+<td style="text-align:center">$1\times10^{6}$</td>
+<td style="text-align:center">$3.6\times10^{9}$</td>
+<td style="text-align:center">$1.30\times10^{13}$</td>
+<td style="text-align:center">$7.46\times10^{15}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$n$</td>
+<td style="text-align:center">$1\times10^3$</td>
+<td style="text-align:center">$6\times10^{4}$</td>
+<td style="text-align:center">$3.6\times10^6$</td>
+<td style="text-align:center">$8.64\times10^7$</td>
+</tr>
+<tr>
+<td style="text-align:center">$nlgn$</td>
+<td style="text-align:center">$140$</td>
+<td style="text-align:center">$4,895$</td>
+<td style="text-align:center">$204,094$</td>
+<td style="text-align:center">$3,943,234$</td>
+</tr>
+<tr>
+<td style="text-align:center">$n^2$</td>
+<td style="text-align:center">$31$</td>
+<td style="text-align:center">$244$</td>
+<td style="text-align:center">$1,897$</td>
+<td style="text-align:center">$9,295$</td>
+</tr>
+<tr>
+<td style="text-align:center">$n^3$</td>
+<td style="text-align:center">$9$</td>
+<td style="text-align:center">$39$</td>
+<td style="text-align:center">$153$</td>
+<td style="text-align:center">$442$</td>
+</tr>
+<tr>
+<td style="text-align:center">$2^n$</td>
+<td style="text-align:center">$9$</td>
+<td style="text-align:center">$15$</td>
+<td style="text-align:center">$21$</td>
+<td style="text-align:center">$26$</td>
+</tr>
+<tr>
+<td style="text-align:center">$n!$</td>
+<td style="text-align:center">$6$</td>
+<td style="text-align:center">$8$</td>
+<td style="text-align:center">$9$</td>
+<td style="text-align:center">$11$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">1月</th>
+<th style="text-align:center">1年</th>
+<th style="text-align:center">1世纪</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$lgn$</td>
+<td style="text-align:center">$2^{2.59\times{ {10}^9} }$</td>
+<td style="text-align:center">$2^{3.11\times{ {10}^{10} } }$</td>
+<td style="text-align:center">$2^{3.11\times{ {10}^{12} } }$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\sqrt{n}$</td>
+<td style="text-align:center">$6.72\times10^{18}$</td>
+<td style="text-align:center">$9.67\times10^{20}$</td>
+<td style="text-align:center">$9.67\times10^{24}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$n$</td>
+<td style="text-align:center">$2.59\times10^9$</td>
+<td style="text-align:center">$3.11\times10^{10}$</td>
+<td style="text-align:center">$3.11\times10^{12}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$nlgn$</td>
+<td style="text-align:center">$97,659,289$</td>
+<td style="text-align:center">$1,038,468,132$</td>
+<td style="text-align:center">$85,644,334,437$</td>
+</tr>
+<tr>
+<td style="text-align:center">$n^2$</td>
+<td style="text-align:center">$50,911$</td>
+<td style="text-align:center">$176,363$</td>
+<td style="text-align:center">$1,763,632$</td>
+</tr>
+<tr>
+<td style="text-align:center">$n^3$</td>
+<td style="text-align:center">$1,373$</td>
+<td style="text-align:center">$3,144$</td>
+<td style="text-align:center">$14,597$</td>
+</tr>
+<tr>
+<td style="text-align:center">$2^n$</td>
+<td style="text-align:center">$31$</td>
+<td style="text-align:center">$34$</td>
+<td style="text-align:center">$41$</td>
+</tr>
+<tr>
+<td style="text-align:center">$n!$</td>
+<td style="text-align:center">$12$</td>
+<td style="text-align:center">$13$</td>
+<td style="text-align:center">$15$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><p>​        如无注明，$lg$的底数为2</p>
+
+          
         
       
     </div>
