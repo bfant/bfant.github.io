@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="algorithms," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="第二章2.1 插入排序123456789101112131415template &amp;lt;class T&amp;gt;void insertion_sort(T a[], int n) //n=a.length&amp;#123;    for (int j = 1; j &amp;lt; n; j++)    &amp;#123;        T key = a[j];        int i = j - 1;">
+<meta name="keywords" content="algorithms">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法导论第二章">
+<meta property="og:url" content="http://yoursite.com/2020/01/09/算法导论第二章/index.html">
+<meta property="og:site_name" content="bfant&#39;s blog">
+<meta property="og:description" content="第二章2.1 插入排序123456789101112131415template &amp;lt;class T&amp;gt;void insertion_sort(T a[], int n) //n=a.length&amp;#123;    for (int j = 1; j &amp;lt; n; j++)    &amp;#123;        T key = a[j];        int i = j - 1;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2020/01/09/算法导论第二章/2.2-2.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/09/算法导论第二章/2.2-4.png">
+<meta property="og:updated_time" content="2020-01-10T13:24:45.749Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法导论第二章">
+<meta name="twitter:description" content="第二章2.1 插入排序123456789101112131415template &amp;lt;class T&amp;gt;void insertion_sort(T a[], int n) //n=a.length&amp;#123;    for (int j = 1; j &amp;lt; n; j++)    &amp;#123;        T key = a[j];        int i = j - 1;">
+<meta name="twitter:image" content="http://yoursite.com/2020/01/09/算法导论第二章/2.2-2.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/01/09/算法导论第二章/"/>
+
+
+
+
+
+  <title>算法导论第二章 | bfant's blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d146b6a1e47582a6788338c82d1cc5ce";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">bfant's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/09/算法导论第二章/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zimeng Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bfant's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">算法导论第二章</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-09T16:46:30+08:00">
+                2020-01-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/algorithms/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithms</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/09/算法导论第二章/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/09/算法导论第二章/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,357
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><h2 id="2-1-插入排序"><a href="#2-1-插入排序" class="headerlink" title="2.1 插入排序"></a>2.1 插入排序</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">insertion_sort</span>(<span class="title">T</span> <span class="title">a</span>[], <span class="title">int</span> <span class="title">n</span>) //<span class="title">n</span>=<span class="title">a</span>.<span class="title">length</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        T key = a[j];</span><br><span class="line">        <span class="keyword">int</span> i = j - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; a[i] &gt; key)</span><br><span class="line">        &#123;</span><br><span class="line">            a[i + <span class="number">1</span>] = a[i];</span><br><span class="line">            i = i - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        a[i + <span class="number">1</span>] = key;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-1-1"><a href="#2-1-1" class="headerlink" title="2.1-1"></a>2.1-1</h3><p> 略</p>
+<h3 id="2-1-2"><a href="#2-1-2" class="headerlink" title="2.1-2"></a>2.1-2</h3><p>将第8行的&gt;替换为&lt;即可</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">insertion_sort</span>(<span class="title">T</span> <span class="title">a</span>[], <span class="title">int</span> <span class="title">n</span>) //<span class="title">n</span>=<span class="title">a</span>.<span class="title">length</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        T key = a[j];</span><br><span class="line">        <span class="keyword">int</span> i = j - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; a[i] &lt; key)</span><br><span class="line">        &#123;</span><br><span class="line">            a[i + <span class="number">1</span>] = a[i];</span><br><span class="line">            i = i - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        a[i + <span class="number">1</span>] = key;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-1-3"><a href="#2-1-3" class="headerlink" title="2.1-3"></a>2.1-3</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">int</span> <span class="title">find_in_array</span>(<span class="title">T</span> <span class="title">a</span>[], <span class="title">T</span> *&amp;<span class="title">v</span>, <span class="title">int</span> <span class="title">n</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (*v == a[i])</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    v = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-1-4"><a href="#2-1-4" class="headerlink" title="2.1-4"></a>2.1-4</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">binary_add</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> b[], <span class="keyword">int</span> c[], <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> jinwei = <span class="number">0</span>, sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        sum = a[i] + b[i] + jinwei;</span><br><span class="line">        <span class="keyword">if</span> (sum == <span class="number">0</span>)</span><br><span class="line">            c[i + <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (sum == <span class="number">1</span>)</span><br><span class="line">            c[i + <span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (sum == <span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            c[i + <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">            jinwei = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (sum == <span class="number">3</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            c[i + <span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">            jinwei = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    c[<span class="number">0</span>] = jinwei;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-2-分析算法"><a href="#2-2-分析算法" class="headerlink" title="2.2 分析算法"></a>2.2 分析算法</h2><h3 id="2-2-1"><a href="#2-2-1" class="headerlink" title="2.2-1"></a>2.2-1</h3><p>$\Theta(n^3)$</p>
+<h3 id="2-2-2"><a href="#2-2-2" class="headerlink" title="2.2-2"></a>2.2-2</h3><p>选择排序</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">selection_sort</span>(<span class="title">T</span> <span class="title">a</span>[], <span class="title">int</span> <span class="title">n</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    T temp;</span><br><span class="line">    <span class="keyword">int</span> minIndex = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        minIndex = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[minIndex] &gt; a[j])</span><br><span class="line">            &#123;</span><br><span class="line">                minIndex = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        temp = a[minIndex];</span><br><span class="line">        a[minIndex] = a[i];</span><br><span class="line">        a[i] = temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最好情况：$\Theta(n^2)$</p>
+<p>最坏情况：$\Theta(n^2)$</p>
+<p><img src="/2020/01/09/算法导论第二章/2.2-2.png" alt="offical answer"></p>
+<h3 id="2-2-3"><a href="#2-2-3" class="headerlink" title="2.2-3"></a>2.2-3</h3><p>平均需要检查$\frac{n}{2}$个元素，$\Theta(n)$</p>
+<p>最坏情况需要检查$n$个元素,$\Theta(n)$</p>
+<h3 id="2-2-4"><a href="#2-2-4" class="headerlink" title="2.2-4"></a>2.2-4</h3><p><img src="/2020/01/09/算法导论第二章/2.2-4.png" alt="offical answer"></p>
+<h2 id="2-3-设计算法"><a href="#2-3-设计算法" class="headerlink" title="2.3 设计算法"></a>2.3 设计算法</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">merge</span>(<span class="title">T</span> <span class="title">a</span>[], <span class="title">int</span> <span class="title">p</span>, <span class="title">int</span> <span class="title">q</span>, <span class="title">int</span> <span class="title">r</span>)</span></span><br><span class="line"><span class="class">&#123;</span><span class="comment">//将两个有序数组合并，无需哨兵</span></span><br><span class="line">    <span class="keyword">int</span> n1 = q - p + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> n2 = r - q;</span><br><span class="line">    T *L = <span class="keyword">new</span> T[n1];</span><br><span class="line">    T *R = <span class="keyword">new</span> T[n2];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n1; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        L[i] = a[p + i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n2; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        R[j] = a[q + j + <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">    T m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = p; k &lt;= r; k++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; n1 &amp;&amp; j &lt; n2)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (L[i] &lt; R[j])</span><br><span class="line">            &#123;</span><br><span class="line">                a[k] = L[i];</span><br><span class="line">                m = a[k];</span><br><span class="line">                i = i + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                a[k] = R[j];</span><br><span class="line">                m = a[k];</span><br><span class="line">                j = j + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (i &lt; n1)</span><br><span class="line">        &#123;</span><br><span class="line">            a[k] = L[i];</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (j &lt; n2)</span><br><span class="line">        &#123;</span><br><span class="line">            a[k] = R[j];</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">delete</span>[] L;</span><br><span class="line">    <span class="keyword">delete</span>[] R;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">mergeSort</span>(<span class="title">T</span> <span class="title">a</span>[], <span class="title">int</span> <span class="title">p</span>, <span class="title">int</span> <span class="title">r</span>)</span></span><br><span class="line"><span class="class">&#123;</span><span class="comment">//归并排序，p与r为起始终止位置,对整个数组，p=0,r=n-1</span></span><br><span class="line">    <span class="keyword">if</span> (p &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> q = (p + r) / <span class="number">2</span>;</span><br><span class="line">        mergeSort&lt;T&gt;(a, p, q);</span><br><span class="line">        mergeSort&lt;T&gt;(a, q + <span class="number">1</span>, r);</span><br><span class="line">        merge&lt;T&gt;(a, p, q, r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-1、2-3-2、2-3-3"><a href="#2-3-1、2-3-2、2-3-3" class="headerlink" title="2.3-1、2.3-2、2.3-3"></a>2.3-1、2.3-2、2.3-3</h3><p>略</p>
+<h3 id="2-3-4"><a href="#2-3-4" class="headerlink" title="2.3-4"></a>2.3-4</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">insertion_sort_recursive</span>(<span class="title">T</span> <span class="title">a</span>[], <span class="title">int</span> <span class="title">n</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    insertion_sort_recursive(a, n - <span class="number">1</span>);</span><br><span class="line">    T key = a[n - <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">int</span> i = n - <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; a[i] &gt; key)</span><br><span class="line">    &#123;</span><br><span class="line">        a[i + <span class="number">1</span>] = a[i];</span><br><span class="line">        i = i - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    a[i + <span class="number">1</span>] = key;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-5"><a href="#2-3-5" class="headerlink" title="2.3-5"></a>2.3-5</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">int</span> <span class="title">binary_search_iterative</span>(<span class="title">T</span> <span class="title">a</span>[], <span class="title">T</span> <span class="title">v</span>, <span class="title">int</span> <span class="title">end</span>, <span class="title">int</span> <span class="title">start</span> = 0)</span></span><br><span class="line"><span class="class">&#123;</span><span class="comment">//二分查找的迭代版本，end最大为a中元素个数</span></span><br><span class="line">    <span class="keyword">int</span> mid = (end + start) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span> (start &lt;= end)</span><br><span class="line">    &#123;</span><br><span class="line">        mid = (start + end) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (v == a[mid])</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (v &gt; a[mid])</span><br><span class="line">        &#123;</span><br><span class="line">            start = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            end = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">int</span> <span class="title">binary_search_recursive</span>(<span class="title">T</span> <span class="title">a</span>[], <span class="title">T</span> <span class="title">v</span>, <span class="title">int</span> <span class="title">end</span>, <span class="title">int</span> <span class="title">start</span> = 0)</span></span><br><span class="line"><span class="class">&#123;</span><span class="comment">//二分查找的递归版本，end最大为a中元素的个数</span></span><br><span class="line">    <span class="keyword">if</span> (start &gt; end)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">int</span> mid = (start + end) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (v == a[mid])</span><br><span class="line">        <span class="keyword">return</span> mid;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (v &gt; a[mid])</span><br><span class="line">        <span class="keyword">return</span> binary_search_recursive(a, v, end, mid + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> binary_search_recursive(a, v, mid - <span class="number">1</span>, start);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-6"><a href="#2-3-6" class="headerlink" title="2.3-6"></a>2.3-6</h3><p>不能，在最坏情况下，插入排序仍然需要移动$j-1$个元素，所以最坏情况总运行时间仍为$\Theta(n^2)$</p>
+<h3 id="2-3-7"><a href="#2-3-7" class="headerlink" title="2.3-7"></a>2.3-7</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">bool</span> <span class="title">find_two_elements_sum_x</span>(<span class="title">T</span> <span class="title">a</span>[], <span class="title">T</span> <span class="title">x</span>, <span class="title">int</span> <span class="title">n</span>)</span></span><br><span class="line"><span class="class">&#123;</span><span class="comment">//先对数组进行排序，再对x-a[i]进行二分查找</span></span><br><span class="line">    merge_sort(a, <span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> result = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        result = binary_search_recursive(a, x - a[i], n, i + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span> (result != <span class="number">-1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度分析：</p>
+<p>归并排序复杂度为$\Theta(nlgn)$</p>
+<p>二分查找时间复杂度为$\Theta(lgn)$,最坏情况下执行n-1次，for循环时间复杂度为$\Theta(nlgn)$</p>
+<p>最终时间复杂度为$\Theta(nlgn)+\Theta(nlgn)=\Theta(nlgn)$</p>
+<h2 id="章末思考题"><a href="#章末思考题" class="headerlink" title="章末思考题"></a>章末思考题</h2><h3 id="2-1在归并排序中对小数组采用插入排序"><a href="#2-1在归并排序中对小数组采用插入排序" class="headerlink" title="2-1在归并排序中对小数组采用插入排序"></a>2-1在归并排序中对小数组采用插入排序</h3><h4 id="a"><a href="#a" class="headerlink" title="a."></a>a.</h4><p>证明：长度为k的表最坏情况下需要$\Theta(k^2)$时间，则$\frac{n}{k}$个长度为k的表最坏情况下需要$\Theta(k^2\times{\frac{n}{k} })=\Theta(nk)$时间</p>
+<h4 id="b"><a href="#b" class="headerlink" title="b."></a>b.</h4><p>为了完成合并，每次将两个列表两两合并，再将结果两两合并，每次合并需要的时间为$\Theta(k\times{\frac{n}{k} })=\Theta(n)$时间，为了最终合成1个总表，需要$lg(\frac{n}{k})$次合并。所以，最坏情况下合并时间需要$\Theta(nlg(\frac{n}{k}))$</p>
+<h4 id="c"><a href="#c" class="headerlink" title="c."></a>c.</h4><p>标准的归并排序所需时间为$\Theta(nlgn)$，修改后的算法最坏情况运行时间为$\Theta(nk+nlg(\frac{n}{k}))$。</p>
+<p>要使改进算法的时间与标准合并排序的时间相同，即使改进算法的时间不能出现$nlgn$的高阶项，易得，$nk$的阶数比$nlg(\frac{n}{k})$的阶数高，即$nk$的阶数不能高于$nlgn$，即k最大为$lgn$。</p>
+<p>将$k=lgn$代入，得：$2nlgn-nlglgn$,忽略常数与低阶项，原式等于$nlgn$。</p>
+<h4 id="d"><a href="#d" class="headerlink" title="d."></a>d.</h4><p>在实践中，k应为插入排序比合并排序快的最大数组的长度。</p>
+<h3 id="2-2-冒泡排序的正确性"><a href="#2-2-冒泡排序的正确性" class="headerlink" title="2-2 冒泡排序的正确性"></a>2-2 冒泡排序的正确性</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">bubble_sort</span>(<span class="title">T</span> <span class="title">a</span>[], <span class="title">int</span> <span class="title">end</span>, <span class="title">int</span> <span class="title">start</span> = 0)</span></span><br><span class="line"><span class="class">&#123;</span><span class="comment">//冒泡排序</span></span><br><span class="line">    T temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; end - <span class="number">1</span>; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = end - <span class="number">1</span>; j &gt; i; j--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[j] &lt; a[j - <span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                temp = a[j - <span class="number">1</span>];</span><br><span class="line">                a[j - <span class="number">1</span>] = a[j];</span><br><span class="line">                a[j] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="a-1"><a href="#a-1" class="headerlink" title="a."></a>a.</h4><p>需要证明$A’$中的元素对$A$中的元素完成了排列</p>
+<h4 id="b-1"><a href="#b-1" class="headerlink" title="b."></a>b.</h4><p><strong>循环不变式：</strong>在里层的for循环每次迭代开始时，$A[j]=A[k]_{min},j\leq k\leq n-1$</p>
+<p><strong>初始化：</strong>最初，$j=n-1$，子数组$A[j..n-1]$中只有单个元素$A[n-1]$，循环不变式成立。</p>
+<p><strong>保持：</strong>考虑给定值j的迭代。根据循环不变式，$A[j]$是$A[j..n-1]$中的最小值。如果$A[j-1]$的值小于$A[j]$的值，则循环交换$A[j-1]$与$A[j]$的值，所以$A[j-1]$将会是$A[j-1..n-1]$中的最小值，则在下一次循环开始时，$j$减小，循环不变式依然成立。</p>
+<p><strong>终止：</strong>当$j=i$时循环终止，根据循环不变式，$A[i]=A[k]_{min},i\leq k\leq n-1$。</p>
+<h4 id="c-1"><a href="#c-1" class="headerlink" title="c."></a>c.</h4><p><strong>循环不变式：</strong>在外层的for循环每次迭代开始时，子数组$A[0..i-1]$由数组$A[0..n-1]$中的i个排序好的最小值组成，并且子数组$A[i..n-1]$由最初在数组$A[0..n-1]$中的$n-i$个剩余值组成。</p>
+<p><strong>初始化：</strong>在循环的第一次迭代之前，$i=0$。子数组$A[0,i-1]$为空，循环不变式成立。</p>
+<p><strong>保持：</strong>考虑给定值$i$的迭代。根据循环不变式，$A[0..i-1]$由$A[1..n]$中的$i$个最小值按顺序排列组成。由(b)部分可得，在执行里层for循环之后，$A[i]$是$A[i..n-1]$中的最小值，因此$A[1..i]$现在是由$A[1..n]$中i个最小值的顺序排列。此外，由于里层for循环，子数组$A[i+1..n]$由剩余的$n-i-1$个值组成。</p>
+<p><strong>终止：</strong>当$i=n-1$时，外层for循环终止，因此$i-1=n-2$。根据循环不变性，$A[1..i-1]$即子数组$A[0..n-2]$，由最初的$A[0..n-1]$中的$n-1$个最小值顺序组成。则最后一个元素$A[n-1]$必须是最大值。因此，整个数组$A[0..n-1]$被排序。</p>
+<h4 id="d-1"><a href="#d-1" class="headerlink" title="d."></a>d.</h4><p>冒泡排序的最坏情况运行时间为$\Theta(n^2)$，与插入排序相同。</p>
+<h3 id="2-3-（霍纳-Horner-规则的正确性）"><a href="#2-3-（霍纳-Horner-规则的正确性）" class="headerlink" title="2-3 （霍纳(Horner)规则的正确性）"></a>2-3 （霍纳(Horner)规则的正确性）</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">T</span> <span class="title">horner</span>(<span class="title">T</span> <span class="title">a</span>[], <span class="title">T</span> <span class="title">x</span>, <span class="title">int</span> <span class="title">n</span>)</span></span><br><span class="line"><span class="class">&#123;</span><span class="comment">//霍纳规则</span></span><br><span class="line">    T y = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        y = a[i] + x * y;</span><br><span class="line">    <span class="keyword">return</span> y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="a-2"><a href="#a-2" class="headerlink" title="a."></a>a.</h4><p>$\Theta(n)$</p>
+<h4 id="b-2"><a href="#b-2" class="headerlink" title="b."></a>b.</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">T</span> <span class="title">naive_horner</span>(<span class="title">T</span> <span class="title">a</span>[], <span class="title">T</span> <span class="title">x</span>, <span class="title">int</span> <span class="title">n</span>)</span></span><br><span class="line"><span class="class">&#123;</span><span class="comment">//a中元素个数应为n+1</span></span><br><span class="line">    T y = <span class="number">0</span>, temp = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        temp = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++)</span><br><span class="line">            temp = temp * x;</span><br><span class="line">        y += temp * a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行时间为$\Theta(n^2)$，性能不如霍纳规则。</p>
+<h4 id="c-2"><a href="#c-2" class="headerlink" title="c."></a>c.</h4><p><strong>循环不变式：</strong>霍纳规则的每次for迭代开始时，都有</p>
+<script type="math/tex; mode=display">
+y=\sum_{k=0}^{n-(i+1)}a_{k+i+1}x^k</script><p><strong>初始化：</strong>显然，第一次循环开始前，$i=n$，$y=0$。满足循环不变式。</p>
+<p><strong>保持：</strong>由for循环中的公式：</p>
+<script type="math/tex; mode=display">
+\begin{align} 
+y & = a_i + x \sum_{k = 0}^{n - (i + 1)} a_{k + i + 1} x^k \\ 
+& = a_i x^0 + \sum_{k = 0}^{n - i - 1} a_{k + i + 1} x^{k + 1} \\ 
+& = a_i x^0 +\sum_{k = 1}^{n - i} a_{k + i} x^k \\ 
+& = \sum_{k = 0}^{n - i} a_{k + i} x^k. 
+\end{align}</script><p><strong>终止：</strong>循环结束时$i=-1$，可得</p>
+<script type="math/tex; mode=display">
+y=\sum_{k=0}^{n-(i+1)}a_{k+i+1}x^k=\sum_{k=0}^na_kx^k</script><h4 id="d-2"><a href="#d-2" class="headerlink" title="d."></a>d.</h4><p>由循环不变式可的代码片段即为多项式的值。</p>
+<h3 id="2-4-逆序对"><a href="#2-4-逆序对" class="headerlink" title="2-4 逆序对"></a>2-4 逆序对</h3><h4 id="a-3"><a href="#a-3" class="headerlink" title="a."></a>a.</h4><2 8="" ,3,="" ,6="" ,1="">
+
+<p>逆序对：(1,5),(2,5),(3,4),(3,5),(4,5)</p>
+<h4 id="b-3"><a href="#b-3" class="headerlink" title="b."></a>b.</h4><p>由大至小排列的拥有最多的逆序对，对每个$(i,j),1\leq i&lt;j\leq n$，均为逆序对。逆序对的个数为$C_2^n=\frac{n(n-1)}{2}$。</p>
+<h4 id="c-3"><a href="#c-3" class="headerlink" title="c."></a>c.</h4><p>插入排序中每一次元素的移动，有对应着一个逆序对的消除。</p>
+<h4 id="d-3"><a href="#d-3" class="headerlink" title="d."></a>d.</h4></2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/algorithms/" rel="tag"># algorithms</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/09/算法导论第一章/" rel="next" title="算法导论第一章">
+                <i class="fa fa-chevron-left"></i> 算法导论第一章
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zimeng Zhang</p>
+              <p class="site-description motion-element" itemprop="description">Oh my useless blog</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章"><span class="nav-text">第二章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-插入排序"><span class="nav-text">2.1 插入排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1"><span class="nav-text">2.1-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2"><span class="nav-text">2.1-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-3"><span class="nav-text">2.1-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-4"><span class="nav-text">2.1-4</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-分析算法"><span class="nav-text">2.2 分析算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1"><span class="nav-text">2.2-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2"><span class="nav-text">2.2-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3"><span class="nav-text">2.2-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-4"><span class="nav-text">2.2-4</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-设计算法"><span class="nav-text">2.3 设计算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1、2-3-2、2-3-3"><span class="nav-text">2.3-1、2.3-2、2.3-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-4"><span class="nav-text">2.3-4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-5"><span class="nav-text">2.3-5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-6"><span class="nav-text">2.3-6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-7"><span class="nav-text">2.3-7</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章末思考题"><span class="nav-text">章末思考题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1在归并排序中对小数组采用插入排序"><span class="nav-text">2-1在归并排序中对小数组采用插入排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a"><span class="nav-text">a.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b"><span class="nav-text">b.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c"><span class="nav-text">c.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d"><span class="nav-text">d.</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-冒泡排序的正确性"><span class="nav-text">2-2 冒泡排序的正确性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-1"><span class="nav-text">a.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-1"><span class="nav-text">b.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-1"><span class="nav-text">c.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-1"><span class="nav-text">d.</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-（霍纳-Horner-规则的正确性）"><span class="nav-text">2-3 （霍纳(Horner)规则的正确性）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-2"><span class="nav-text">a.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-2"><span class="nav-text">b.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-2"><span class="nav-text">c.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-2"><span class="nav-text">d.</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-逆序对"><span class="nav-text">2-4 逆序对</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-3"><span class="nav-text">a.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-3"><span class="nav-text">b.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-3"><span class="nav-text">c.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-3"><span class="nav-text">d.</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zimeng Zhang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'uCREgnkgwLsIQuGi1aLtQqQp-gzGzoHsz',
+        appKey: 'qBp23OPoFcihXMdQIH0g1ybH',
+        placeholder: '兄dei，能评论了，确定不改个昵称评论吗~',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
