@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="A way to solve problem 1005 of poj.orgTitle: I Think I Need a HouseboatDescriptionFred Mapper is considering purchasing some land in Louisiana to build his house on. In the process of investigating th">
+<meta name="description" content="Title: I Think I Need a HouseboatDescriptionFred Mapper is considering purchasing some land in Louisiana to build his house on. In the process of investigating the land, he learned that the state of L">
 <meta name="keywords" content="c++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="poj1005">
 <meta property="og:url" content="http://yoursite.com/2018/08/16/poj1005/index.html">
 <meta property="og:site_name" content="bfant&#39;s blog">
-<meta property="og:description" content="A way to solve problem 1005 of poj.orgTitle: I Think I Need a HouseboatDescriptionFred Mapper is considering purchasing some land in Louisiana to build his house on. In the process of investigating th">
+<meta property="og:description" content="Title: I Think I Need a HouseboatDescriptionFred Mapper is considering purchasing some land in Louisiana to build his house on. In the process of investigating the land, he learned that the state of L">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/08/16/poj1005/semicircle.jpg">
-<meta property="og:updated_time" content="2020-01-09T08:38:43.308Z">
+<meta property="og:updated_time" content="2020-01-21T05:51:40.149Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="poj1005">
-<meta name="twitter:description" content="A way to solve problem 1005 of poj.orgTitle: I Think I Need a HouseboatDescriptionFred Mapper is considering purchasing some land in Louisiana to build his house on. In the process of investigating th">
+<meta name="twitter:description" content="Title: I Think I Need a HouseboatDescriptionFred Mapper is considering purchasing some land in Louisiana to build his house on. In the process of investigating the land, he learned that the state of L">
 <meta name="twitter:image" content="http://yoursite.com/2018/08/16/poj1005/semicircle.jpg">
 
 
@@ -358,7 +358,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  470
+                  453
                 </span>
               
 
@@ -395,7 +395,7 @@
       
 
       
-        <h1 id="A-way-to-solve-problem-1005-of-poj-org"><a href="#A-way-to-solve-problem-1005-of-poj-org" class="headerlink" title="A way to solve problem 1005 of poj.org"></a>A way to solve problem 1005 of poj.org</h1><h2 id="Title-I-Think-I-Need-a-Houseboat"><a href="#Title-I-Think-I-Need-a-Houseboat" class="headerlink" title="Title: I Think I Need a Houseboat"></a>Title: I Think I Need a Houseboat</h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Fred Mapper is considering purchasing some land in Louisiana to build his house on. In the process of investigating the land, he learned that the state of Louisiana is actually shrinking by 50 square miles each year, due to erosion caused by the Mississippi River. Since Fred is hoping to live in this house the rest of his life, he needs to know if his land is going to be lost to erosion.   After doing more research, Fred has learned that the land that is being lost forms a semicircle. This semicircle is part of a circle centered at (0,0), with the line that bisects the circle being the X axis. Locations below the X axis are in the water. The semicircle has an area of 0 at the beginning of year 1. (Semicircle illustrated in the Figure.)  </p>
+        <h2 id="Title-I-Think-I-Need-a-Houseboat"><a href="#Title-I-Think-I-Need-a-Houseboat" class="headerlink" title="Title: I Think I Need a Houseboat"></a>Title: I Think I Need a Houseboat</h2><h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><p>Fred Mapper is considering purchasing some land in Louisiana to build his house on. In the process of investigating the land, he learned that the state of Louisiana is actually shrinking by 50 square miles each year, due to erosion caused by the Mississippi River. Since Fred is hoping to live in this house the rest of his life, he needs to know if his land is going to be lost to erosion.   After doing more research, Fred has learned that the land that is being lost forms a semicircle. This semicircle is part of a circle centered at (0,0), with the line that bisects the circle being the X axis. Locations below the X axis are in the water. The semicircle has an area of 0 at the beginning of year 1. (Semicircle illustrated in the Figure.)  </p>
 <p><img src="/2018/08/16/poj1005/semicircle.jpg" alt=""></p>
 <a id="more"></a>
 <h4 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h4><p>The first line of input will be a positive integer indicating how many data sets will be included (N). Each of the next N lines will contain the X and Y Cartesian coordinates of the land Fred is considering. These will be floating point numbers measured in miles. The Y coordinate will be non-negative. (0,0) will not be given. </p>
@@ -407,8 +407,7 @@
 <li>This problem will be judged automatically. Your answer must match exactly, including the capitalization, punctuation, and white-space. This includes the periods at the ends of the lines.  </li>
 <li>All locations are given in miles. </li>
 </ol>
-<h3 id="C-Code"><a href="#C-Code" class="headerlink" title="C++ Code"></a>C++ Code</h3><p>Yes, you can say this is c code.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, year;</span><br><span class="line">    <span class="keyword">float</span> x, y, pi = <span class="number">3.14159</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%f %f"</span>, &amp;x, &amp;y);</span><br><span class="line">        year = pi * (x * x + y * y) / <span class="number">100</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Property %d: This property will begin eroding in year %d.\n"</span>, i + <span class="number">1</span>, (<span class="keyword">int</span>)year + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"END OF OUTPUT."</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="C-Code"><a href="#C-Code" class="headerlink" title="C++ Code"></a>C++ Code</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, year;</span><br><span class="line">    <span class="keyword">float</span> x, y, pi = <span class="number">3.14159</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%f %f"</span>, &amp;x, &amp;y);</span><br><span class="line">        year = pi * (x * x + y * y) / <span class="number">100</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Property %d: This property will begin eroding in year %d.\n"</span>, i + <span class="number">1</span>, (<span class="keyword">int</span>)year + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"END OF OUTPUT."</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -531,7 +530,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -586,7 +585,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A-way-to-solve-problem-1005-of-poj-org"><span class="nav-text">A way to solve problem 1005 of poj.org</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Title-I-Think-I-Need-a-Houseboat"><span class="nav-text">Title: I Think I Need a Houseboat</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description"><span class="nav-text">Description</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Input"><span class="nav-text">Input</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Output"><span class="nav-text">Output</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Input"><span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Output"><span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hint"><span class="nav-text">Hint</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-Code"><span class="nav-text">C++ Code</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Title-I-Think-I-Need-a-Houseboat"><span class="nav-text">Title: I Think I Need a Houseboat</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Description"><span class="nav-text">Description</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Input"><span class="nav-text">Input</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Output"><span class="nav-text">Output</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Input"><span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Output"><span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hint"><span class="nav-text">Hint</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-Code"><span class="nav-text">C++ Code</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
