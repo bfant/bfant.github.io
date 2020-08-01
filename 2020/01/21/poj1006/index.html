@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="bfant&#39;s blog">
 <meta property="og:description" content="BiorhythmsDescription:Some people believe that there are three cycles in a person’s life that start the day he or she is born. These three cycles are the physical, emotional, and intellectual cycles,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-21T13:11:06.805Z">
+<meta property="og:updated_time" content="2020-07-28T07:30:10.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="poj1006">
 <meta name="twitter:description" content="BiorhythmsDescription:Some people believe that there are three cycles in a person’s life that start the day he or she is born. These three cycles are the physical, emotional, and intellectual cycles,">
@@ -356,7 +356,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  580
+                  584
                 </span>
               
 
@@ -401,7 +401,8 @@
 <p>Case 1: the next triple peak occurs in 1234 days.</p>
 <p>Use the plural form ``days’’ even if the answer is 1.</p>
 <h4 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h4><p>Case 1: the next triple peak occurs in 21252 days.<br>Case 2: the next triple peak occurs in 21152 days.<br>Case 3: the next triple peak occurs in 19575 days.<br>Case 4: the next triple peak occurs in 16994 days.<br>Case 5: the next triple peak occurs in 8910 days.<br>Case 6: the next triple peak occurs in 10789 days.</p>
-<h4 id="C-Code"><a href="#C-Code" class="headerlink" title="C++ Code"></a>C++ Code</h4><p>note:中国余数定理。</p>
+<h4 id="C-Code"><a href="#C-Code" class="headerlink" title="C++ Code"></a>C++ Code</h4><p>note:中国余数定理</p>
+<p>Memory: 176K        Time: 94MS</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p, e, i, d, times = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; p &gt;&gt; e &gt;&gt; i &gt;&gt; d)</span><br><span class="line">    &#123;</span><br><span class="line">        times++;</span><br><span class="line">        <span class="keyword">if</span> (p == <span class="number">-1</span> &amp;&amp; e == <span class="number">-1</span> &amp;&amp; i == <span class="number">-1</span> &amp;&amp; d == <span class="number">-1</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        p = p % <span class="number">23</span>;</span><br><span class="line">        e = e % <span class="number">28</span>;</span><br><span class="line">        i = i % <span class="number">33</span>;</span><br><span class="line">        <span class="keyword">int</span> days = (<span class="number">5544</span> * p + <span class="number">14421</span> * e + <span class="number">1288</span> * i) % <span class="number">21252</span> - d;</span><br><span class="line">        <span class="keyword">while</span> (days &lt;= <span class="number">0</span>)</span><br><span class="line">            days += <span class="number">21252</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Case "</span> &lt;&lt; times &lt;&lt; <span class="string">": the next triple peak occurs in "</span> &lt;&lt; days &lt;&lt; <span class="string">" days."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
@@ -442,6 +443,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/28/poj1007/" rel="prev" title="poj1007">
+                poj1007 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -521,7 +526,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

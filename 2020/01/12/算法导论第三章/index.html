@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="bfant&#39;s blog">
 <meta property="og:description" content="第三章 函数的增长">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-19T07:38:13.864Z">
+<meta property="og:updated_time" content="2020-07-26T12:09:20.490Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法导论第三章函数的增长">
 <meta name="twitter:description" content="第三章 函数的增长">
@@ -356,7 +356,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,219
+                  1,755
                 </span>
               
 
@@ -372,7 +372,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  9
                 </span>
               
             </div>
@@ -394,28 +394,28 @@
 
       
         <h1 id="第三章-函数的增长"><a href="#第三章-函数的增长" class="headerlink" title="第三章 函数的增长"></a>第三章 函数的增长</h1><a id="more"></a>
-<h2 id="3-1-渐进记号"><a href="#3-1-渐进记号" class="headerlink" title="3.1 渐进记号"></a>3.1 渐进记号</h2><h3 id="Theta-记号"><a href="#Theta-记号" class="headerlink" title="$\Theta$记号"></a>$\Theta$记号</h3><p>$\Theta(g(n))={f(n):存在正常量c_1、c_2和n_0，使得对所有n\geq n_0，由0\leq c_1g(n)\leq f(n)\leq c_2g(n)}$</p>
+<h2 id="3-1-渐进记号"><a href="#3-1-渐进记号" class="headerlink" title="3.1 渐进记号"></a>3.1 渐进记号</h2><h3 id="Theta-记号"><a href="#Theta-记号" class="headerlink" title="$\Theta$记号"></a>$\Theta$记号</h3><p>$\Theta(g(n))={f(n)$:存在正常量$c_1$、$c_2$和$n_0$，使得对所有$n\geq n_0$，有$0\leq c_1g(n)\leq f(n)\leq c_2g(n)}$</p>
 <p>$g(n)$为$f(n)$的渐进紧确界</p>
-<h3 id="O-记号"><a href="#O-记号" class="headerlink" title="$O$记号"></a>$O$记号</h3><p>$O(g(n))={f(n)：存在正常量c和n_0，使得对所有n\geq n_0，有0\leq f(n)\leq cg(n)}$</p>
+<h3 id="O-记号"><a href="#O-记号" class="headerlink" title="$O$记号"></a>$O$记号</h3><p>$O(g(n))={f(n)$：存在正常量$c$和$n_0$，使得对所有$n\geq n_0$，有$0\leq f(n)\leq cg(n)}$</p>
 <p>$g(n)$为$f(n)$的渐近上界</p>
-<h3 id="o-记号"><a href="#o-记号" class="headerlink" title="$o$记号"></a>$o$记号</h3><p>$o(g(n))={f(n)：对任意正常量c&gt;0，存在常量n_0&gt;0，使得对所有n\geq n_0，有0\leq f(n)&lt; cg(n)}$</p>
-<p>$O$中c对某个正常量成立，$o$中c对任意正常量成立</p>
+<h3 id="o-记号"><a href="#o-记号" class="headerlink" title="$o$记号"></a>$o$记号</h3><p>$o(g(n))={f(n)$：对任意正常量$c&gt;0$，存在常量$n_0&gt;0$，使得对所有$n\geq n_0，有0\leq f(n)&lt; cg(n)}$</p>
+<p>$O$中c对某个正常量成立，$o$中$c$对任意正常量成立</p>
 <p>例：$2n=O(n^2)$，$2n^2\neq o(n^2)$</p>
-<h3 id="Omega-记号"><a href="#Omega-记号" class="headerlink" title="$\Omega$记号"></a>$\Omega$记号</h3><p>$\Omega(g(n))={f(n)：存在正常量c和n_0，使得对所有n\geq n_0，有0\leq cg(n)\leq f(n)}$</p>
+<h3 id="Omega-记号"><a href="#Omega-记号" class="headerlink" title="$\Omega$记号"></a>$\Omega$记号</h3><p>$\Omega(g(n))={f(n)：$存在正常量$c$和$n_0$，使得对所有$n\geq n_0$，有$0\leq cg(n)\leq f(n)}$</p>
 <p>$g(n)$为$f(n)$的渐进下界</p>
 <h3 id="omega-记号"><a href="#omega-记号" class="headerlink" title="$\omega$记号"></a>$\omega$记号</h3><p>$\omega(g(n))={f(n)：对任意正常量c&gt;0，存在常量n_0&gt;0，使得对所有n\geq n_0，有0\leq cg(n)&lt;f(n)}$</p>
 <p>例：$\frac{n^2}{2}=\omega(n)$，$\frac{n^2}{2}\neq \omega(n^2)$</p>
 <h3 id="传递性"><a href="#传递性" class="headerlink" title="传递性"></a>传递性</h3><script type="math/tex; mode=display">
 \begin{align}
-f(n)=\Theta(g(n))\ \ \&\ \ g(n)=\Theta(h(n))\ \ \ \ &\Rightarrow\ \ \ \ f(n)=\Theta(h(n))\\
+&f(n)=\Theta(g(n))&\&\ \ &g(n)=\Theta(h(n))\ \ \ \ &\Rightarrow\ \ \ \ &f(n)=\Theta(h(n))\\
 
-f(n)=O(g(n))\ \ \&\ \ g(n)=O(h(n))\ \ \ \ &\Rightarrow\ \ \ \ f(n)=O(h(n))\\
+&f(n)=O(g(n))&\&\ \ &g(n)=O(h(n))\ \ \ \ &\Rightarrow\ \ \ \ &f(n)=O(h(n))\\
 
-f(n)=\Omega(g(n))\ \ \&\ \ g(n)=\Omega(h(n))\ \ \ \ &\Rightarrow\ \ \ \ f(n)=\Omega(h(n))\\
+&f(n)=\Omega(g(n))&\&\ \ &g(n)=\Omega(h(n))\ \ \ \ &\Rightarrow\ \ \ \ &f(n)=\Omega(h(n))\\
 
-f(n)=\omicron(g(n))\ \ \&\ \ g(n)=\omicron(h(n))\ \ \ \ &\Rightarrow\ \ \ \ f(n)=\omicron(h(n))\\
+&f(n)=\omicron(g(n))&\&\ \ &g(n)=\omicron(h(n))\ \ \ &\Rightarrow\ \ \ \ &f(n)=\omicron(h(n))\\
 
-f(n)=\omega(g(n))\ \ \&\ \ g(n)=\omega(h(n))\ \ \ \ &\Rightarrow\ \ \ \ f(n)=\omega(h(n))\\
+&f(n)=\omega(g(n))&\&\ \ &g(n)=\omega(h(n))\ \ \ \ &\Rightarrow\ \ \ \ &f(n)=\omega(h(n))\\
 \end{align}</script><h3 id="自反性"><a href="#自反性" class="headerlink" title="自反性"></a>自反性</h3><script type="math/tex; mode=display">
 \begin{align}
 &f(n)=\Theta(f(n))\\
@@ -426,7 +426,13 @@ f(n)=\Theta(g(n))\ \ \ \ 当且仅当\ \ \ \  g(n)=\Theta(f(n))</script><h3 id="
 \begin{align}
 f(n)=O(g(n))\ \ \ \ &当且仅当\ \ \ \ g(n)=\Omega(f(n))\\
 f(n)=\omicron(g(n))\ \ \ \ &当且仅当\ \ \ \ g(n)=\omega(f(n))
-\end{align}</script><h3 id="3-1-1"><a href="#3-1-1" class="headerlink" title="3.1-1"></a>3.1-1</h3><p>略</p>
+\end{align}</script><h3 id="3-1-1"><a href="#3-1-1" class="headerlink" title="3.1-1"></a>3.1-1</h3><p>对于渐进非负函数$f(n)$和$g(n)$，可以得到:</p>
+<p>$f(n)&gt;0,g(n)&gt;0$</p>
+<p>$max{f(n),g(n)}&lt;2(f(n)+g(n))$</p>
+<p>$f(n)\le max{f(n),g(n)}$</p>
+<p>$g(n)\le max{f(n),g(n)}$</p>
+<p>$\frac12(f(n)+g(n))\le max{f(n),g(n)}$</p>
+<p>所以，存在$c_1=0.5,c_2=2$，使得$c_1(f(n)+g(n))\le max{f(n),g(n)}\le c_2(f(n)+g(n))$，问题得证。</p>
 <h3 id="3-1-2"><a href="#3-1-2" class="headerlink" title="3.1-2"></a>3.1-2</h3><script type="math/tex; mode=display">
 \begin{align}
 n+a&\leq n+|a| \\
@@ -436,7 +442,7 @@ n+a&\geq n-|a|\\
 
 \end{align}</script><p>则，$n\geq 2|a|$时</p>
 <p>$0\leq \frac12n\leq n+a\leq 2n$</p>
-<p>b&gt;0</p>
+<p>$b&gt;0$</p>
 <p>$0\leq (\frac12n)^b\leq (n+a)^b\leq (2n)^b$</p>
 <p>$0\leq (\frac12)^bn^b\leq (n+a)^b\leq 2^bn^b$</p>
 <p>所以，对任意a和b，都存在$c_1=(\frac12)^b,c_2=2^b,n_0&gt;2|a|$，满足$(n+a)^b=\Theta(n^b)$</p>
@@ -465,8 +471,11 @@ O(g(n,m))=\{f(n,m):存在正常量c、n_0、m_0，使得对所有n\geq n_0或m\g
 <p>多重函数</p>
 <p>多重对数函数</p>
 <p>斐波那契数</p>
-<h3 id="3-2-1"><a href="#3-2-1" class="headerlink" title="3.2-1"></a>3.2-1</h3><p>f(n)+g(n),f(g(n))证明略。</p>
-<p>因为f(n),g(n)非负，所以$n&lt;m$时,$f(n)\times g(n)&lt;f(m)\times g(n)&lt;f(m)\times g(m)$</p>
+<h3 id="3-2-1"><a href="#3-2-1" class="headerlink" title="3.2-1"></a>3.2-1</h3><p>因为$f(n),g(n)$单调递增，所以$n&lt;m$时,</p>
+<p>$f(n)&lt;f(m),g(n)&lt;g(m)$，所以$f(n)+g(n)&lt;f(m)+g(m)$</p>
+<p>$g(n)&lt;g(m)$，所以$f(g(n))&lt;f(g(m))$</p>
+<p>因为$f(n),g(n)$非负，所以</p>
+<p>$f(n)\times g(n)&lt;f(m)\times g(n)&lt;f(m)\times g(m)$</p>
 <h3 id="3-2-2"><a href="#3-2-2" class="headerlink" title="3.2-2"></a>3.2-2</h3><p>$a^{log_bc}=c^{log_ba}$</p>
 <p>左边可做变形：</p>
 <script type="math/tex; mode=display">
@@ -486,7 +495,7 @@ lg(n!)&=lg(\sqrt{2\pi n}(\frac ne)^n)\\
 <p>易得，当$n\geq2$时，$n!=n(n-1)(n-2)…\cdot1&lt;n^n=n\cdot n\cdot…\cdot n$，所以$n!=\omicron(n^n)$。</p>
 <h3 id="3-2-4"><a href="#3-2-4" class="headerlink" title="3.2-4"></a>3.2-4</h3><p>$\lceil{lgn}\rceil=\Theta(lgn)$</p>
 <p>$lg(n!)=\Theta(nlgn)$</p>
-<p>要证明f(n)是多项式有界的，即要证明存在c、k、$n_0$使得当$n\geq n_0$时，$f(n)\leq cn^k$，即要证明$lgf(n)\leq cklgn$，即$lgf(n)=O(lgn)$。</p>
+<p>要证明f(n)是多项式有界的，即要证明存在$c$、$k$、$n_0$使得当$n\geq n_0$时，$f(n)\leq cn^k$，即要证明$lgf(n)\leq cklgn$，即$lgf(n)=O(lgn)$。</p>
 <script type="math/tex; mode=display">
 \begin{align}
 lg(\lceil lgn\rceil !)&=\Theta(\lceil lgn\rceil lg\lceil lgn\rceil)\\
@@ -501,8 +510,10 @@ lg(\lceil lglgn\rceil!)&=\Theta(\lceil lglgn\rceil lg(\lceil lglgn\rceil))\\
 &=\omicron(lg^2(lgn))\\
 &=\omicron(lgn)
 \end{align}</script><p>对倒数第二步，$lg^bn=\omicron(n^a)$。</p>
-<h3 id="3-2-5"><a href="#3-2-5" class="headerlink" title="3.2-5"></a>3.2-5</h3><script type="math/tex; mode=display">
-lg(lg^*n)=lg^{*+1}n=lg^*(lgn)</script><p>？</p>
+<h3 id="3-2-5"><a href="#3-2-5" class="headerlink" title="3.2-5"></a>3.2-5</h3><p>令$lg^<em>n=x$，由$lg^</em>n$的定义，可以得到</p>
+<p>$lg^<em>(lgn)=lg^</em>n-1=x-1$</p>
+<p>$lg(lg^*n)=lgx$</p>
+<p>第二个渐进更大</p>
 <h3 id="3-2-6"><a href="#3-2-6" class="headerlink" title="3.2-6"></a>3.2-6</h3><p>黄金分割率$\phi$及其共轭数$\hat\phi$是方程$x^2=x+1$的两个根，所以满足该方程。</p>
 <h3 id="3-2-7"><a href="#3-2-7" class="headerlink" title="3.2-7"></a>3.2-7</h3><p>易得，当$i=0,1$时该等式成立。</p>
 <p>当$i\geq2$时，</p>
@@ -524,10 +535,169 @@ F_i&=\frac{\phi^{i-2}(1+\phi)-\hat\phi^{i-2}(1+\hat\phi) }{\sqrt5}\\
 &=\frac{\phi^{i-2}\phi^2-\hat\phi^{i-2}\hat\phi^2 }{\sqrt5}\\
 &=\frac{\phi^i-\hat\phi^i}{\sqrt5}
 \end{align}</script><p>等式成立。</p>
-<h3 id="3-2-8"><a href="#3-2-8" class="headerlink" title="3.2-8"></a>3.2-8</h3><p>因为$klnk=\Theta(n)$，所以$存在正常量c_1、c_2和n_0，使得对所有n\geq n_0，由0\leq c_1n\leq klnk\leq c_2n$</p>
-<p>则同理，存在正常量$c_1、c_2$，对所有$n\geq n_0$，有$0\leq \frac{1}{c_2}klnk\leq n\leq \frac{1}{c_1}klnk$。</p>
+<h3 id="3-2-8"><a href="#3-2-8" class="headerlink" title="3.2-8"></a>3.2-8</h3><p>因为$klnk=\Theta(n)$，所以存在正常量$c_1$、$c_2$和$n_0$，使得对所有$n\geq n_0$，有$0\leq c_1n\leq klnk\leq c_2n$</p>
+<p>则同理，存在正常量$c_1$、$c_2$，对所有$n\geq n_0$，有$0\leq \frac{1}{c_2}klnk\leq n\leq \frac{1}{c_1}klnk$。</p>
 <p>所以$n=\Theta(klnk)$，即$k=\Theta(nlnn)$。</p>
 <p>问题得证。</p>
+<h2 id="章末思考题"><a href="#章末思考题" class="headerlink" title="章末思考题"></a>章末思考题</h2><h3 id="3-1多项式的渐进行为"><a href="#3-1多项式的渐进行为" class="headerlink" title="3-1多项式的渐进行为"></a>3-1多项式的渐进行为</h3><p>假设$p(n)=\sum_{i=0}^da_in^i$是一个关于$n$的$d$次多项式，其中$a_d&gt;0$，$k$是一个常量。使用渐进记号的定义来证明下面的性质。</p>
+<p><strong>a.</strong>若$k\ge d$，则$p(n)=O(n^k)$。</p>
+<p><strong>b.</strong>若$k\le d$，则$p(n)=\Omega(n^k)$。</p>
+<p><strong>c.</strong>若$k=d$，则$p(n)=\Theta(n^k)$。</p>
+<p><strong>d.</strong>若$k&gt;d$，则$p(n)=o(n^k)$。</p>
+<p><strong>e.</strong>若$k&lt;d$，则$p(n)=\omega(n^k)$。</p>
+<p>根据极限和渐进记号的定义，可以证明以上5个命题。</p>
+<h3 id="3-2相对渐进增长"><a href="#3-2相对渐进增长" class="headerlink" title="3-2相对渐进增长"></a>3-2相对渐进增长</h3><p>为下表中的每对表达式$(A,B)$指出$A$是否是$B$的$O$、$o$、$\Omega$、$\omega$或$\Theta$。假设$k\ge1$、$\varepsilon&gt;0$且$c&gt;1$均为常量。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">$O$</th>
+<th style="text-align:center">$o$</th>
+<th style="text-align:center">$\Omega$</th>
+<th style="text-align:center">$\omega$</th>
+<th style="text-align:center">$\Theta$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$lg^kn$</td>
+<td style="text-align:center">$n^\varepsilon$</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">$n^k$</td>
+<td style="text-align:center">$c^n$</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">$\sqrt{n}$</td>
+<td style="text-align:center">$n^{sinn}$</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">$2^n$</td>
+<td style="text-align:center">$2^{n/2}$</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">$n^{lgc}$</td>
+<td style="text-align:center">$c^{lgn}$</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">$lg(n!)$</td>
+<td style="text-align:center">$lg(n^n)$</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">是</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>备注：a. 根据$k$和$\varepsilon$取值不同而不同</p>
+<p>​            对于题意，以b.为例，$B=\Omega(A)$。</p>
+<h3 id="3-3根据渐进增长率排序"><a href="#3-3根据渐进增长率排序" class="headerlink" title="3-3根据渐进增长率排序"></a>3-3根据渐进增长率排序</h3><p><strong>a.</strong>根据增长的阶来排序下面的函数，即求出满足$g<em>1=\Omega(g_2)$，$g_2=\Omega(g_3)$，……，$g</em>{29}=\Omega(g<em>{30})$的函数的一种排列$g_1$，$g_2$，……，$g</em>{30}$。把你的表划分成等价类，使得函数$f(n)$和$g(n)$再相同类中当且仅当$f(n)=\Theta(g(n))$。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong>快</strong></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>$2^{lg^*n}$</td>
+<td></td>
+</tr>
+<tr>
+<td>?</td>
+<td>$lg^*(lgn)$</td>
+<td>$lg^*n$</td>
+</tr>
+<tr>
+<td></td>
+<td>$lg(lg^{*}n)$</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>$1$</td>
+<td>$n^{\frac{1}{lgn}}=2$</td>
+</tr>
+<tr>
+<td><strong>慢</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 
       
     </div>
@@ -650,7 +820,7 @@ F_i&=\frac{\phi^{i-2}(1+\phi)-\hat\phi^{i-2}(1+\hat\phi) }{\sqrt5}\\
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -705,7 +875,7 @@ F_i&=\frac{\phi^{i-2}(1+\phi)-\hat\phi^{i-2}(1+\hat\phi) }{\sqrt5}\\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章-函数的增长"><span class="nav-text">第三章 函数的增长</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-渐进记号"><span class="nav-text">3.1 渐进记号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Theta-记号"><span class="nav-text">$\Theta$记号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#O-记号"><span class="nav-text">$O$记号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#o-记号"><span class="nav-text">$o$记号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Omega-记号"><span class="nav-text">$\Omega$记号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#omega-记号"><span class="nav-text">$\omega$记号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传递性"><span class="nav-text">传递性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自反性"><span class="nav-text">自反性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对称性"><span class="nav-text">对称性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转置对称性"><span class="nav-text">转置对称性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1"><span class="nav-text">3.1-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2"><span class="nav-text">3.1-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-3"><span class="nav-text">3.1-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-4"><span class="nav-text">3.1-4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-5"><span class="nav-text">3.1-5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-6"><span class="nav-text">3.1-6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-7"><span class="nav-text">3.1-7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-8"><span class="nav-text">3.1-8</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-标准记号与常用函数"><span class="nav-text">3.2 标准记号与常用函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1"><span class="nav-text">3.2-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2"><span class="nav-text">3.2-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-3"><span class="nav-text">3.2-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-4"><span class="nav-text">3.2-4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-5"><span class="nav-text">3.2-5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-6"><span class="nav-text">3.2-6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-7"><span class="nav-text">3.2-7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-8"><span class="nav-text">3.2-8</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章-函数的增长"><span class="nav-text">第三章 函数的增长</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-渐进记号"><span class="nav-text">3.1 渐进记号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Theta-记号"><span class="nav-text">$\Theta$记号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#O-记号"><span class="nav-text">$O$记号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#o-记号"><span class="nav-text">$o$记号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Omega-记号"><span class="nav-text">$\Omega$记号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#omega-记号"><span class="nav-text">$\omega$记号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传递性"><span class="nav-text">传递性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自反性"><span class="nav-text">自反性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对称性"><span class="nav-text">对称性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转置对称性"><span class="nav-text">转置对称性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1"><span class="nav-text">3.1-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2"><span class="nav-text">3.1-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-3"><span class="nav-text">3.1-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-4"><span class="nav-text">3.1-4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-5"><span class="nav-text">3.1-5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-6"><span class="nav-text">3.1-6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-7"><span class="nav-text">3.1-7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-8"><span class="nav-text">3.1-8</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-标准记号与常用函数"><span class="nav-text">3.2 标准记号与常用函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1"><span class="nav-text">3.2-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2"><span class="nav-text">3.2-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-3"><span class="nav-text">3.2-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-4"><span class="nav-text">3.2-4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-5"><span class="nav-text">3.2-5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-6"><span class="nav-text">3.2-6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-7"><span class="nav-text">3.2-7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-8"><span class="nav-text">3.2-8</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章末思考题"><span class="nav-text">章末思考题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1多项式的渐进行为"><span class="nav-text">3-1多项式的渐进行为</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2相对渐进增长"><span class="nav-text">3-2相对渐进增长</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3根据渐进增长率排序"><span class="nav-text">3-3根据渐进增长率排序</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
